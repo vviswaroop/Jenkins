@@ -1,0 +1,55 @@
+Basic Workflow:
+-----
+1. check out from SCM (like git,code commit)
+2. Branch and make local changes
+3. Self testing code - Add or Change tests as necessary
+4. Test Driven development. (Creating a test before writing the code)
+5. Trigger automated build locally (smoke test level)
+6.If successful, consider for commiting
+7. Update with latest from mainline (master, gold etc;)
+8. Push changes, build and test on integration machine.
+
+Best Practiices:
+-------------
+1. Maintain a single source repository
+2. Have a common mainline branch (usually master)
+3. Automate the build
+4. Minimize the potential for user error, automate everything posiible.
+5. Make code self testing
+6. Everyone commits frequently ( atleast daily)
+7. Communication is a key!!!! (slack, hangouts skype)
+8. Frequent merges will help avoid conflicts
+9. Working branch should be updated as frequently as possible to help avoid very large diffs while merging.
+10. Build every commit
+11. Prioritize fixing broken builds
+12. keep your builds fast!
+13. Testing env should be as close to prod as possible
+14. Make it easy for anyone to get latest
+15. keep it open, everyone should see what's happening
+16. Automate the deployment
+
+Continuous Delivery:
+--------
+A software development discipline where software is built so that it can be released to production at any time.
+
+1. software is always deployable throughout software development life cycle. (SDLC)
+2. Not breaking the build is prioritized over adding features.
+3. Feedback is fast and production readiness is known.
+	NOTE: Acceptance test qualification - IS MY BUILD PRODUCTION READY?
+4. Push button deployments are possible of any version of the software.
+5. Close/collaborate working relationship
+6. Extensive Automation
+
+
+Difference between CI & CD:
+--------------
+Continuous Delivery - is the ability to release at any time
+Continuous Integration - is just the practice of integrating code continuously.
+
+Continuous Deployment - Code is released continuously as part of automated pipeline.
+
+Continuous Deployment pipeline:
+----------
+
+Start --> SCM Commit --> Repo (Origin Branch) --> Pipeline Start --> SCM Checkout --> [Unit tests] --> Build/Launch --> Test --> [Integration tests/ Smoke tests/ end to end tests] --> Deploy --> Pipeline End
+
